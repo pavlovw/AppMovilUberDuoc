@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-md="6" size-lg="4" size="12">
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+          <ion-item>
+            <ion-label position="floating">Nombre y Apellido</ion-label>
+            <ion-input type="text" [(ngModel)]="fullName" name="fullName" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Nombre de Usuario</ion-label>
+            <ion-input type="text" [(ngModel)]="username" name="username" required minlength="3"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating" class="xd">Fecha de Nacimiento</ion-label>
+            <ion-datetime
+              [(ngModel)]="birthdate"
+              name="birthdate"
+              displayFormat="DD MMM YYYY"
+              pickerFormat="DD MMM YYYY"
+              presentation="date"
+              required
+            ></ion-datetime>
+          </ion-item>
+          
+          
+              
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="password" name="password" required minlength="4"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Confirmar Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required minlength="4"></ion-input>
+          </ion-item>
+
+          <ion-button expand="full" color="medium" (click)="clearForm()">Limpiar</ion-button>
+
+          <ion-button expand="full" type="submit" [disabled]="!registerForm.form.valid">Crear Cuenta</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

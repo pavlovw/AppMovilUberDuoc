@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="profile-container">
+    <h1 class="user">Bienvenido, {{ username }}!</h1>
+
+    <ion-item>
+      <ion-avatar class="profile-avatar" (click)="fileInput.click()">
+        <img [src]="profileImage" alt="Imagen de perfil" />
+      </ion-avatar>
+      <input #fileInput type="file" accept="image/*" (change)="onFileChange($event)" style="display: none;" />
+    </ion-item>
+    
+    <h2 class="profile-name">{{ username }}</h2>
+    
+    <ion-list lines="full">
+      
+      <ion-item>
+        <ion-label>
+          <h3>Nombre Completo</h3>
+          <p>{{ firstName }} {{ lastName }}</p>
+        </ion-label>
+      </ion-item>
+            
+      <ion-item>
+        <ion-label>
+          <h3>Fecha de nacimiento</h3>
+          <p>{{ birthdate | date:'dd/MM/yyyy' }}</p>
+        </ion-label>
+      </ion-item>
+          
+    </ion-list>
+    
+    <ion-button routerLink="/editar" expand="full" color="primary" class="edit-button">
+      Editar Perfil
+    </ion-button>
+
+    <ion-button expand="full" color="danger" (click)="logout()">
+      Cerrar Sesión
+    </ion-button>
+  </div>
+</ion-content>
+
+
+<app-footer></app-footer>

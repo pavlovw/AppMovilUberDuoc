@@ -1,0 +1,6 @@
+<ion-list>
+  <ion-item *ngFor="let user of users">
+    {{ user.fullName }} ({{ user.username }})
+    <ion-button (click)="deleteUser(user.username)" color="danger">Eliminar</ion-button>
+  </ion-item>
+</ion-list>

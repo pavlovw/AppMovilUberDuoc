@@ -1,0 +1,38 @@
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-md="6" size-lg="4" size="12">
+        <div class="welcome">
+          <h1>BIENVENIDO</h1>
+        </div>
+
+        <ion-text color="danger" *ngIf="loginError">
+          <p>{{ loginError }}</p>
+        </ion-text>
+
+        <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+          <ion-item>
+            <ion-label position="floating">Nombre de usuario</ion-label>
+            <ion-input type="text" [(ngModel)]="username" name="username" required minlength="3" maxlength="15"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="password" name="password" required pattern="\d{4}"></ion-input>
+          </ion-item>
+
+          <ion-button expand="full" type="submit">
+            Ingresar
+          </ion-button>
+        </form>
+
+        <ion-button expand="full" routerLink="/register" fill="outline">
+          Crear Cuenta
+        </ion-button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<app-footer></app-footer>

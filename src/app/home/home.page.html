@@ -1,0 +1,71 @@
+
+<ion-menu contentId="main-content" class="my-custom-menu">
+  <ion-header>
+    <ion-toolbar>
+
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding my-custom-content">
+    <div class="menu-title">Menú principal</div>
+    <ion-item [routerLink]="['/admin']" lines="none" class="link-item">
+      <ion-label>Ir a Admin</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['/transporte']" lines="none" class="link-item">
+      <ion-label>Iniciar viaje</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['/ajustes']" lines="none" class="link-item">
+      <ion-label>Ajustes</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['/perfil']" lines="none" class="link-item">
+      <ion-label>Ir a perfil</ion-label>
+    </ion-item>
+</ion-content>
+</ion-menu>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" id="main-content">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Bienvenido {{ firstName }} a TeLlevoAPP</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Nuestra aplicación está diseñada para facilitar tu regreso a casa después de clases, conectándote con otros estudiantes que cuentan con transporte propio.
+    </ion-card-content>
+    <ion-card-content class="custom-card-content">
+      TeLlevoAPP tiene como objetivo principal mejorar tu experiencia de movilización, fomentando un espíritu colaborativo entre compañeros.
+    </ion-card-content>
+    <ion-img class="imagen" src="assets/img/xd.jpg" alt="Transporte"></ion-img>
+    <ion-card-content class="info-section">
+      <ion-list>
+        <ion-item>
+          <ion-icon name="car-outline" slot="start"></ion-icon>
+          <ion-label>Viajes rápidos y seguros</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="people-outline" slot="start"></ion-icon>
+          <ion-label>Conecta con compañeros de confianza</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="cash-outline" slot="start"></ion-icon>
+          <ion-label>Ahorra en transporte diario</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+
+
+<app-footer></app-footer>
